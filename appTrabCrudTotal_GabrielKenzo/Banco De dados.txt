@@ -1,0 +1,18 @@
+CREATE DATABASE Nomekjasikjds;
+USE DATABASE Nomekjasikjds;
+
+
+CREATE TABLE Login (
+id int primary key auto_incremed,
+email varchar(20),
+senha interger(20),
+);
+
+
+CREATE TABLE Registro (
+id int primary key auto_incremed,
+nome_alimento varchar(20),
+preco interger(20),
+descrição varchar(100),
+);
+
