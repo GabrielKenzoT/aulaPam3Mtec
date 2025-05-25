@@ -1,21 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { styles } from './style';
 
-import {
-    SafeAreaView,
-    Text,
-    View,
-    ScrollView,
-    TouchableOpacity,
-    Image,
-    ActivityIndicator,
-    RefreshControl,
-    StatusBar,
-    Alert,
-
-} from 'react-native';
-
-
+import {SafeAreaView,Text,View,ScrollView,TouchableOpacity,Image,ActivityIndicator,RefreshControl,StatusBar,Alert,} from 'react-native';
 
 import { MaterialIcons } from '@expo/vector-icons';
 import Load from '../../components/Load';

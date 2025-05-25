@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import DrawerRoutes from './drawer.routes';
 
 import Home from '../screens/Home';
-import Login from '../screens/Login'
 import Cadastro from '../screens/Cadastro';
 
 
@@ -15,9 +14,8 @@ function StackNavigator(){
     
         <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>   
 
-            <Stack.Screen name="Login" component={Login} />  
-            <Stack.Screen name="Home" component={DrawerRoutes} />                          
-            <Stack.Screen name="Cadastro" component={Cadastro} /> 
+            <Stack.Screen name="Home" component={DrawerRoutes} />        
+            <Stack.Screen name="Cadastro" component={Cadastro} />                    
 
         </Stack.Navigator>
     )
@@ -25,9 +23,9 @@ function StackNavigator(){
 
 function AppRoutes(){
     return(
-        <NavigationContainer>
+    <NavigationContainer>
         <DrawerRoutes/>
-      </NavigationContainer>
+    </NavigationContainer>
     )
 }
 export default AppRoutes;

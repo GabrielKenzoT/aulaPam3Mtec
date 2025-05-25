@@ -5,7 +5,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { useNavigation } from '@react-navigation/core';
 
 import Home from '../screens/Home';
-import Login from '../screens/Login'
 import CustomDrawer from '../components/CustomDrawer';
 import Cadastro from '../screens/Cadastro';
 
@@ -37,11 +36,6 @@ const DrawerRoutes = () => {
        <Drawer.Screen 
             name="Cadastro"
             component={Cadastro}
-            
-        />
-        <Drawer.Screen 
-            name="Login"
-            component={Login}
             
         />
 
