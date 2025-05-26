@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
     height: 55,
+    marginTop:33,
   },
   menu:{
     position: 'absolute',

@@ -14,7 +14,7 @@ export default function Cadastro({route,navigation}){
     const [nome_alimento, setnome_alimento] = useState("");   
     const [preco, setPreco] = useState("");   
     const [descricao, setDescricao] = useState("");  
-    const [image, setImage] = useState("");  
+    const [imagem, setImage] = useState("");  
     const [sucess, setSucess] = useState(false);
     const [loading, setLoading] = useState(false);
             
@@ -27,12 +27,12 @@ export default function Cadastro({route,navigation}){
 
 async function buscardados(){      
         
-  const res = await  api.get('3DS/appBD/buscarId.php?id=' + id);
+  const res = await  api.get('3DS1/appBD/buscarId.php?id=' + id);
     limparCampos();
     setnome_alimento(res.data.nome_alimento);
     setPreco(res.data.preco);
     setDescricao(res.data.descricao);  
-    setImage(res.data.image);  
+    setImage(res.data.imagem);  
   }
 
       useEffect(() => {       
@@ -60,10 +60,10 @@ async function editar() {
              nome_alimento: nome_alimento,
              preco: preco,
              descricao: descricao, 
-             image:image, 
+             imagem:imagem, 
          }
 
-         const res = await api.post('3DS/appBD/editar.php', obj);
+         const res = await api.post('3DS1/appBD/editar.php', obj);
 
          if (res.data.sucesso === false) {
              showMessage({
@@ -93,7 +93,7 @@ async function editar() {
 
 
 async function saveData() {                
-  if (nome_alimento == "" || preco == "" || descricao == "" || image == "") {
+  if (nome_alimento == "" || preco == "" || descricao == "" || imagem == "") {
     showMessage({
       message: "Erro ao Salvar",
       description: 'Preencha os Campos Obrigatórios!',
@@ -109,10 +109,10 @@ async function saveData() {
       nome_alimento: nome_alimento,
       preco: preco,
       descricao: descricao, 
-      image:image,       
+      imagem:imagem,       
     }
 
-    const res = await api.post('3DS/appBD/salvar.php', obj);
+    const res = await api.post('3DS1/appBD/salvar.php', obj);
 
     if (res.data.sucesso === false) {
       showMessage({
@@ -156,7 +156,7 @@ async function saveData() {
             <ScrollView>   
             <View>  
 
-                <Text style={styles.TitleInputs}>Cidade:</Text>
+                <Text style={styles.TitleInputs}>Nome de comida:</Text>
 
                 <TextInput               
                     placeholder="Digite o nome da comida"
@@ -199,7 +199,7 @@ async function saveData() {
                 <TextInput
                     placeholder="Digite o link da Imagem"
                     onChangeText={(text) => setImage(text)}
-                    value={image}
+                    value={imagem}
                     style={styles.TextInput}
                    
                 />
@@ -218,8 +218,6 @@ async function saveData() {
                 <Ionicons name="create-outline" size={30} color="#50b9e1"></Ionicons>
                     <Text style={styles.ButtonText}>Salvar</Text>
                 </TouchableOpacity>
-
-
                 <TouchableOpacity
                     style={styles.Button}
                     onPress={() => {

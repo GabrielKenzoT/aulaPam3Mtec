@@ -21,7 +21,7 @@ export default function Home({ navigation }) {
 
 
     async function totalDadosCadastrados() {
-        const res = await api.get(`3DS/appBD/listar-cards.php`);
+        const res = await api.get(`3DS1/appBD/listar-cards.php`);
         setTotal(res.data);
     }
 
@@ -50,7 +50,7 @@ export default function Home({ navigation }) {
 
 
       async function deleteItem(id){
-        const res = await api.get('3DS/appBD/excluir.php?id=' + id);
+        const res = await api.get('3DS1/appBD/excluir.php?id=' + id);
         listarDados();
       }
      
@@ -62,7 +62,7 @@ export default function Home({ navigation }) {
 
      try {
            
-            const res = await api.get(`3DS/appBD/buscar.php`);
+            const res = await api.get(`3DS1/appBD/buscar.php`);
             setDados(res.data.result);
          
 
@@ -102,7 +102,7 @@ export default function Home({ navigation }) {
 
       <FlatList
         data={dados}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.id}
         style={styles.flat}
         ListHeaderComponent={() => (
           <View>
@@ -113,7 +113,7 @@ export default function Home({ navigation }) {
         <View style={styles.containertarefas}>
           <View style={styles.linhaTarefa}>
             <Image
-                source={{ uri: item.image }}
+                source={{ uri: item.imagem }}
                 style={styles.imag}
             />
             <View style={styles.textosTarefa}>
