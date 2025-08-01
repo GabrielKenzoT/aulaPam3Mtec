@@ -1,0 +1,10 @@
+CREATE DATABASE Carros;
+USE DATABASE Carros;
+
+CREATE TABLE Car(
+id int primary key AUTO_INCREMENT,
+nome_carro varchar(20),
+modelos varchar(100),
+preco int(20),
+descricao varchar(100)
+);

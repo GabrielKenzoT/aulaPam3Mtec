@@ -1,15 +1,7 @@
 CREATE DATABASE Food;
 USE DATABASE Food;
 
-
-CREATE TABLE Login (
-id int primary key auto_incremed,
-email varchar(20),
-senha interger(20),
-);
-
-
-CREATE TABLE Registro (
+CREATE TABLE Comida (
 id int primary key auto_incremed,
 nome_alimento varchar(20),
 preco interger(20),
